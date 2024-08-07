@@ -63,8 +63,9 @@ export default function Calculator() {
   }
 
   return (
-    <div>
-      <Box m={5} />
+    <div className="calculator">
+      <h1 className="string">CALCULATOR</h1>
+
       <Container maxWidth="xs">
         <div className="wrapper">
           <Box m={12} />
