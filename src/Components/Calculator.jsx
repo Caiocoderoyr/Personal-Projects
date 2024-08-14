@@ -38,20 +38,40 @@ export default function Calculator() {
 
     switch (operator) {
       case "+":
-        answer = (parseFloat(oldNum) + parseFloat(num)).toFixed(2);
-        setNum(answer);
+        if (answer % 1 == 0) {
+          answer = parseFloat(oldNum) + parseFloat(num);
+          setNum(answer);
+        } else {
+          answer = (parseFloat(oldNum) + parseFloat(num)).toFixed(2);
+          setNum(answer);
+        }
         break;
       case "-":
-        answer = (oldNum - num).toFixed(2);
-        setNum(answer);
+        if (answer % 1 == 0) {
+          answer = oldNum - num;
+          setNum(answer);
+        } else {
+          answer = (oldNum - num).toFixed(2);
+          setNum(answer);
+        }
         break;
       case "*":
-        answer = (oldNum * num).toFixed(2);
-        setNum(answer);
+        if (answer % 1 == 0) {
+          answer = oldNum * num;
+          setNum(answer);
+        } else {
+          answer = oldNum * num;
+          setNum(answer).toFixed(2);
+        }
         break;
       case "/":
-        answer = (oldNum / num).toFixed(2);
-        setNum(answer);
+        if (answer % 1 == 0) {
+          answer = oldNum / num;
+          setNum(answer);
+        } else {
+          answer = (oldNum / num).toFixed(2);
+          setNum(answer);
+        }
     }
   }
 
@@ -68,8 +88,9 @@ export default function Calculator() {
 
       <Container maxWidth="xs">
         <div className="wrapper">
-          <Box m={12} />
-          <h1 className="result">{num}</h1>
+          <div>
+            <h1 className="result">{num}</h1>
+          </div>
           <button onClick={clear}>AC</button>
           <button onClick={changeSign}>+/-</button>
           <button onClick={percentage}>%</button>

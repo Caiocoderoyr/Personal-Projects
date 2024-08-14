@@ -1,7 +1,7 @@
 .string {
   display: flex;
   justify-content: center;
-  font-size:3em;
+  font-size: 3em;
   font-family: sans-serif;
   color: #ffffff;
 }
@@ -12,7 +12,7 @@
 }
 
 .wrapper {
-  background-color: black;
+  background-color: rgb(56, 56, 56);
   padding: 1em;
   border-radius: 1em;
   border-width: 0.5em;
@@ -20,19 +20,28 @@
   border-top: 1.5em;
   border-style: solid;
   border-color: #975800;
-  box-shadow: 5px 10px rgb(20, 20, 20);
+  box-shadow: 5px 10px rgb(19, 19, 19);
+  height: 44em;
 }
 
 button {
+  border: none;
   width: 3em;
   height: 3em;
   font-size: 1.5em;
-  border: none;
   border-radius: 2em;
   margin: 0.3em;
-}
-button:hover {
+  display: flexbox;
+
   cursor: pointer;
+
+  box-shadow: 4px 4px 10px rgb(0, 0, 0);
+  transition: all 200ms;
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 1px 1px 2px rgb(0, 0, 0);
 }
 
 .operator {
@@ -41,14 +50,23 @@ button:hover {
 }
 
 .number {
+  font-family: sans-serif;
   background-color: #505050;
   color: white;
 }
 
 .result {
+  font-family: sans-serif;
   color: white;
-  display: flex;
+  display: flexbox;
   justify-content: end;
-  margin-right: 1em;
+  margin-left: 0.2em;
   font-size: 3.5em;
+  padding-bottom: 1.2em;
+  position: relative;
+  top: 1em;
+
+  overflow: hidden; /* oculta o texto que ultrapassar o tamanho da div */
+  text-overflow:ellipsis; /* adiciona reticências (...) quando o texto é cortado */
+  white-space: nowrap; /* impede que o texto seja quebrado em várias linhas */
 }
